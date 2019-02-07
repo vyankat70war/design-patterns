@@ -8,12 +8,12 @@ import java.util.Scanner;
 
 public class EnemyShipFactory {
 
-	public static EnemyShip getEnemyShip(){
+	public static EnemyShip getEnemyShip() {
 		EnemyShip enemyShip = null;
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("please select ship : (U/R)? : ");
 		String input = scanner.nextLine().toLowerCase();
-		switch (input){
+		switch (input) {
 			case "u":
 				enemyShip = new UFOEnemyShip();
 				break;
@@ -21,8 +21,6 @@ public class EnemyShipFactory {
 				enemyShip = new RocketEnemyShip();
 				break;
 		}
-
 		return enemyShip;
 	}
-
 }
