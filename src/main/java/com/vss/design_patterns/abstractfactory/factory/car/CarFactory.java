@@ -16,19 +16,16 @@ public class CarFactory {
 	private CarFactory(){}
 
 	public static Car buildCar(CarType model){
-		Car car = null;
 		Location location = getRandomLocation();
 		switch (location){
 			case USA:
-				car = USACarFactory.buidCar(model);
-				break;
+				return USACarFactory.buidCar(model);
 			case INDIA:
-				car = INDIACarFactory.buidCar(model);
-				break;
+				return INDIACarFactory.buidCar(model);
 			case DEFAULT:
-				car = DEFAULTCarFactory.buidCar(model);
+				return DEFAULTCarFactory.buidCar(model);
 		}
-		return car;
+		return null;
 	}
 
 	/**
